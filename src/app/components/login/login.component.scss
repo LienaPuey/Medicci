@@ -1,0 +1,111 @@
+.cont-registro{
+    background-image: url(../../../assets/img-login/background1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cont-form {
+    margin-top: 13rem;
+    width: 30rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.logo{
+    width: 40rem;
+    margin-top: 15rem;
+    margin-left: 13rem
+}
+h2{
+    font-weight: 700;
+}
+.subtitle{
+    font-weight: 400;
+}
+label{
+    font-weight: 300;
+}
+button{
+    font-weight: 700;
+}
+
+.btn-continuar{
+    background-color: #9f9bea;
+    color: white;
+    border-radius: 20px;
+
+}
+
+.btn-google{
+    background-color: #9ed7ce;
+    color: white;
+    border-radius: 20px;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media screen and (max-width: 576px) {  
+    .cont-form {
+        margin-top: 3rem;
+        width: 20rem;
+    }
+    .logo{
+        width: 15rem;
+        margin-top: 3rem;
+        margin-left:5rem;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media screen and (max-width: 768px) and (min-width:576px) {  
+    .cont-form {
+        margin-top: 3rem;
+        width: 20rem;
+    }
+    .logo{
+        width: 15rem;
+        margin-top: 3rem;
+        margin-left:8rem;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media screen and (max-width: 992px) and (min-width: 768px) {  
+    .cont-form {
+        margin-top: 13rem;
+        width: 25rem;
+    }
+    .logo{
+        width: 18rem;
+        margin-top: 15rem;
+        margin-left: 3rem
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media screen and (max-width: 1200px) and (min-width: 992px)  {  
+    .cont-form {
+        margin-top: 13rem;
+        width: 25rem;
+    }
+    .logo{
+        width: 25rem;
+        margin-top: 15rem;
+        margin-left: 5rem
+    }
+
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1200px) { 
+    .cont-form {
+        margin-top: 13rem;
+        width: 25rem;
+    }
+    .logo{
+        width: 40rem;
+        margin-top: 15rem;
+        margin-left: 8rem
+    }
+ }
+
+
