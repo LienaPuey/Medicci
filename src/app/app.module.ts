@@ -11,13 +11,21 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { HomeComponent } from './components/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UsersService } from './services/users.service';
+import { ProfileComponent } from './components/profile/profile.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { ShowNavDirective } from './show-nav.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileComponent,
+    HeaderComponent,
+    FooterComponent,
+    ShowNavDirective
   ],
   imports: [
     BrowserModule,
