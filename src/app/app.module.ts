@@ -15,6 +15,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ShowNavDirective } from './show-nav.directive';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { AddProjectComponent } from './components/add-project/add-project.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ShowNavDirective } from './show-nav.directive';
     ProfileComponent,
     HeaderComponent,
     FooterComponent,
-    ShowNavDirective
+    ShowNavDirective,
+    EditProfileComponent,
+    AddProjectComponent
   ],
   imports: [
     BrowserModule,
