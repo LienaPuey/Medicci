@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
   showNav = false;
+  isLogginPage = false;
 }

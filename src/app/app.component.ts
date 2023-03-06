@@ -7,5 +7,6 @@ import { Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'medicci';
-  public showNav: boolean = true;
+isLoginPage: boolean|undefined;
+
 }
