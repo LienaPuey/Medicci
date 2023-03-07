@@ -14,7 +14,6 @@ import { UsersService } from './services/users.service';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { ShowNavDirective } from './show-nav.directive';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { AddProjectComponent } from './components/add-project/add-project.component';
 
@@ -27,7 +26,6 @@ import { AddProjectComponent } from './components/add-project/add-project.compon
     ProfileComponent,
     HeaderComponent,
     FooterComponent,
-    ShowNavDirective,
     EditProfileComponent,
     AddProjectComponent
   ],

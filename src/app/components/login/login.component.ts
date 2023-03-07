@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  public showNav: boolean = false;
-  isLoginPage= true;
+
 }
