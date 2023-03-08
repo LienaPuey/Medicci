@@ -5,11 +5,19 @@ button{
     background-color: #9ed7ce;
     color: white;
     border-radius: 20px;
+
+    &:hover{
+        background-color: #76B2A6;
+    }
 }
 .botonReg{
     background-color: #9f9bea;
     color: white;
     border-radius: 20px;
+
+    &:hover{
+        background-color: #7070C4;
+    }
 }
 .nav-link{
     font-weight: 700;

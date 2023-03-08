@@ -24,14 +24,48 @@ button{
     background-color: #9f9bea;
     color: white;
     border-radius: 20px;
-
+    &:hover{
+        background-color: #7070C4;
+    }
 }
 .btnSearch {
     background-color: #9ed7ce;
     color: white;
     border-radius: 20px;
+    &:hover{
+        background-color: #76B2A6;
+    }
 }
 
 .searchBar{
     border-radius: 20px;
 }
+
+// Small devices (landscape phones, 576px and up)
+@media screen and (max-width: 576px) {  
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media screen and (max-width: 768px) and (min-width:576px) {  
+
+}
+
+// Large devices (desktops, 992px and up)
+@media screen and (max-width: 992px) and (min-width: 768px) {  
+
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media screen and (max-width: 1200px) and (min-width: 992px)  {  
+
+
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1200px) { 
+    button {
+        font-size: 13px;
+    }
+ }
+
+

@@ -34,7 +34,9 @@ button{
     background-color: #9f9bea;
     color: white;
     border-radius: 20px;
-
+    &:hover{
+        background-color: #7070C4;
+    }
 }
 
 // Small devices (landscape phones, 576px and up)

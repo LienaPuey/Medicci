@@ -5,11 +5,18 @@
     background-color: #9ed7ce;
     color: white;
     border-radius: 20px;
+    &:hover{
+        background-color: #76B2A6;
+    }
 }
 .btnSave{
     background-color: #9f9bea;
     color: white;
     border-radius: 20px;
+    
+    &:hover{
+        background-color: #7070C4;
+    }
 }
 button{
     font-weight: 700;
@@ -19,4 +26,8 @@ button{
     background-color: #9ed7ce;
     color: white;
     border-radius: 20px;
+    
+    &:hover{
+        background-color: #76B2A6;
+    }
 }
