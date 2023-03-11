@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 //register and login 
-
+*{
+    font-family: 'Roboto', sans-serif;
+}
 @import url("https://unpkg.com/leaflet@1.9.3/dist/leaflet.css");
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';

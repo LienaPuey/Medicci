@@ -1,4 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { Map, tileLayer } from 'leaflet';
 
 @Component({
@@ -8,6 +10,8 @@ import { Map, tileLayer } from 'leaflet';
 })
 
 export class HomeComponent implements AfterViewInit{
+  constructor(public modal: NgbModal){}
+
 
   ngAfterViewInit(): void {
     const map = new Map('map').setView([41.3809, 2.1698], 13);

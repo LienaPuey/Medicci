@@ -22,12 +22,7 @@ button{
     font-weight: 700;
 }
 
-.selectFile{
-    background-color: #9ed7ce;
-    color: white;
+.form-control, .form-select{
     border-radius: 20px;
     
-    &:hover{
-        background-color: #76B2A6;
-    }
 }

@@ -1,0 +1,31 @@
+.img-thumbnail {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .btnCancel{
+    background-color: #9ed7ce;
+    color: white;
+    border-radius: 20px;
+    &:hover{
+        background-color: #76B2A6;
+    }
+}
+.btnSave{
+    background-color: #9f9bea;
+    color: white;
+    border-radius: 20px;
+    
+    &:hover{
+        background-color: #7070C4;
+    }
+}
+button{
+    font-weight: 700;
+}
+.form-control{
+    border-radius: 20px;
+    
+}
