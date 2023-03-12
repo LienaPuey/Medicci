@@ -23,3 +23,44 @@ button{
 a{
     color: black !important;
 }
+.modal {
+    display: block;
+  }
+  
+  .modal-body:before,
+    .modal-body:after {
+      display: table;
+  }
+  
+  .modal-header:before,
+  .modal-header:after {
+    display: table;
+  }
+  .modal-open{
+    border:0;
+  }
+// Small devices (landscape phones, 576px and up)
+@media screen and (max-width: 576px) {  
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media screen and (max-width: 768px) and (min-width:576px) {  
+
+}
+
+// Large devices (desktops, 992px and up)
+@media screen and (max-width: 992px) and (min-width: 768px) {  
+
+
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media screen and (max-width: 1200px) and (min-width: 992px)  {  
+
+
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1200px) { 
+    
+ }
