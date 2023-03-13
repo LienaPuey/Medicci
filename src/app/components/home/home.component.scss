@@ -41,12 +41,14 @@ button{
 }
 
 .card{
-    background-color: #FDFAAF;
+    background-color: #fff2b9;
 }
 a{
     color: black !important;
 }
-
+.boldFont{
+    font-weight: 700;
+  }
 
 // Small devices (landscape phones, 576px and up)
 @media screen and (max-width: 576px) {  
