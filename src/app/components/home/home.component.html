@@ -80,32 +80,67 @@
       </div>
    </div>
 </div>
-<ng-template #content let-modal>
-	<div class="modal-header">
-		<h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+<ng-template #userModal let-modal>
+	<div class="modal-header d-flex">
+    <div class="align-self-start align-items-right order-3">
+      <button type="button" class="btn-close " aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>   
+      <div class="align-self-start order-1 d-flex">
+        <svg class="bd-placeholder-img rounded-circle my-4" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect></svg>
+        <div class="d-flex flex-column align-items-start justify-content-center ms-4 order-2">
+          <h4>Nombre usuario</h4>
+          <h6>Categoría</h6>
+        </div>
+      </div>
 	</div>
 	<div class="modal-body">
-		<form>
-			<div class="mb-3">
-				<label for="dateOfBirth">Date of birth</label>
-				<div class="input-group">
-					<input
-						id="dateOfBirth"
-						class="form-control"
-						placeholder="yyyy-mm-dd"
-						name="dp"
-						ngbDatepicker
-						#dp="ngbDatepicker"
-					/>
-					<button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()" type="button"></button>
-				</div>
-			</div>
-		</form>
+    <div class="row g-3">
+      <div class="col-6">
+        <div class="card shadow-sm">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
+          <div class="card-body">
+            <a href="" class="stretched-link text-decoration-none">
+              <h6 class="card-text boldFont">Nombre proyecto</h6>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card shadow-sm">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
+          <div class="card-body">
+            <a href="#" class="stretched-link text-decoration-none">
+              <h6 class="card-text boldFont">Nombre proyecto</h6>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card shadow-sm">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
+          <div class="card-body">
+            <a href="" class="stretched-link text-decoration-none">
+              <h6 class="card-text boldFont">Nombre proyecto</h6>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card shadow-sm">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
+          <div class="card-body">
+            <a href="#" class="stretched-link text-decoration-none">
+              <h6 class="card-text boldFont">Nombre proyecto</h6>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 	</div>
 	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+		<button type="button" class="btn btnCategory" (click)="modal.close('Save click')">Save</button>
 	</div>
 </ng-template>
 
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+<button class="btn btn-outline-primary" (click)="open(userModal)">Launch demo modal</button>
+

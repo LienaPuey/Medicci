@@ -22,22 +22,7 @@ button{
 a{
     color: black !important;
 }
-.modal {
-    display: block;
-  }
-  
-  .modal-body:before,
-    .modal-body:after {
-      display: table;
-  }
-  
-  .modal-header:before,
-  .modal-header:after {
-    display: table;
-  }
-  .modal-open{
-    border:0;
-  }
+
 // Small devices (landscape phones, 576px and up)
 @media screen and (max-width: 576px) {  
 

@@ -14,7 +14,7 @@ export class HomeComponent implements AfterViewInit{
   constructor(private modalService: NgbModal){}
 
   open(content:any) {
-		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+		this.modalService.open(content, { ariaLabelledBy: 'modal-xl-title', size: 'lg' }).result.then(
 			(result) => {
 				this.closeResult = `Closed with: ${result}`;
 			},
