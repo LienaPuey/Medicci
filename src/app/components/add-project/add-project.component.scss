@@ -1,3 +1,7 @@
+.containerEdit{
+    background-color: white;
+    border: #ffe881 5px solid !important;
+}
 .img-thumbnail {
     width: 200px;
     height: 200px;
@@ -7,19 +11,28 @@
 
   .btnCancel{
     background-color: #9ed7ce;
-    color: white;
+    -webkit-box-shadow: -5px 4px 0px 2px  #76B2A6;
+    -moz-box-shadow: -5px 4px 0px 2px  #76B2A6;
+    box-shadow: -5px 4px 0px 2px  #76B2A6;
+    color: rgb(255, 255, 255);
     border-radius: 20px;
     &:hover{
-        background-color: #76B2A6;
+        background-color:#ffe881;
+        color: black;
+        border: solid black 1px;
     }
 }
 .btnSave{
     background-color: #9f9bea;
-    color: white;
+    -webkit-box-shadow: -5px 4px 0px 2px  #7070C4;
+    -moz-box-shadow: -5px 4px 0px 2px  #7070C4;
+    box-shadow: -5px 4px 0px 2px  #7070C4;
+    color: rgb(255, 255, 255);
     border-radius: 20px;
-    
     &:hover{
-        background-color: #7070C4;
+        background-color:#ffe881;
+        color: black;
+        border: solid black 1px;
     }
 }
 button{
@@ -27,7 +40,7 @@ button{
 }
 .form-control{
     border-radius: 20px;
-    
+    border: 1px solid black;
 }
 input[type=file]::file-selector-button {
     background-color:#9ed7ce;

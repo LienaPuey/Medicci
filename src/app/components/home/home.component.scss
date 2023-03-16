@@ -1,6 +1,7 @@
 .containerHome{
     margin-left: 2rem;
     height: 100vh;
+    
 }
 .containerBtn{
     margin-top: 5rem;
@@ -21,27 +22,50 @@ button{
 }
 .btnCategory{
     background-color: #9f9bea;
-    color: white;
+    -webkit-box-shadow: -5px 4px 0px 2px  #7070C4;
+    -moz-box-shadow: -5px 4px 0px 2px  #7070C4;
+    box-shadow: -5px 4px 0px 2px  #7070C4;
+    color: rgb(255, 255, 255);
     border-radius: 20px;
     &:hover{
-        background-color: #7070C4;
+        background-color:#ffe881;
+        color: black;
+        border: solid black 1px;
     }
+
 }
 .btnSearch {
     background-color: #9ed7ce;
-    color: white;
+    -webkit-box-shadow: -5px 4px 0px 2px  #76B2A6;
+    -moz-box-shadow: -5px 4px 0px 2px  #76B2A6;
+    box-shadow: -5px 4px 0px 2px  #76B2A6;
+    color: rgb(255, 255, 255);
     border-radius: 20px;
     &:hover{
-        background-color: #76B2A6;
+        background-color:#ffe881;
+        color: black;
+        border: solid black 1px;
     }
 }
 
 .searchBar{
-    border-radius: 20px;
+    border-radius:20px;
+}
+.form-control{
+    border: 1px solid black;
 }
 
 .card{
-    background-color: #fff2b9;
+    background-color: #ffe881;
+    border-radius: 0;
+    border: black solid 1px;
+    -webkit-box-shadow: -9px 8px 0px 3px rgba(0,0,0,1);
+    -moz-box-shadow: -9px 8px 0px 3px rgba(0,0,0,1);
+    box-shadow: -9px 8px 0px 3px rgba(0,0,0,1);
+}
+
+.card-img, .card-img-top{
+    border-radius: 0;
 }
 a{
     color: black !important;

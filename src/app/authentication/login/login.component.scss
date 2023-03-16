@@ -32,15 +32,20 @@ button{
 
 .btn-continuar{
     background-color: #9f9bea;
-    color: white;
+    -webkit-box-shadow: -5px 4px 0px 2px  #7070C4;
+    -moz-box-shadow: -5px 4px 0px 2px  #7070C4;
+    box-shadow: -5px 4px 0px 2px  #7070C4;
+    color: rgb(255, 255, 255);
     border-radius: 20px;
     &:hover{
-        background-color: #7070C4;
+        background-color:#ffe881;
+        color: black;
+        border: solid black 1px;
     }
 }
 .form-control, .form-select{
     border-radius: 20px;
-    
+    border: black solid 1px;
 }
 
 // Small devices (landscape phones, 576px and up)

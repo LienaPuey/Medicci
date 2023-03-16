@@ -3,11 +3,15 @@
 }
 .btnContact{
     background-color: #9f9bea;
-    color: white;
+    -webkit-box-shadow: -5px 4px 0px 2px  #7070C4;
+    -moz-box-shadow: -5px 4px 0px 2px  #7070C4;
+    box-shadow: -5px 4px 0px 2px  #7070C4;
+    color: rgb(255, 255, 255);
     border-radius: 20px;
-    font-weight: 700;
     &:hover{
-        background-color: #7070C4;
+        background-color:#ffe881;
+        color: black;
+        border: solid black 1px;
     }
 }
 .boldFont{
@@ -17,7 +21,15 @@ button{
     font-weight: 700;
 }
 .card{
-    background-color:  #fff2b9;
+    background-color: #ffe881;
+    border-radius: 0;
+    border: black solid 2px;
+    -webkit-box-shadow: -9px 8px 0px 3px rgba(0,0,0,1);
+    -moz-box-shadow: -9px 8px 0px 3px rgba(0,0,0,1);
+    box-shadow: -9px 8px 0px 3px rgba(0,0,0,1);
+}
+.card-img, .card-img-top{
+    border-radius: 0;
 }
 a{
     color: black !important;
