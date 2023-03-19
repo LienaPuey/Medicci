@@ -1,0 +1,157 @@
+<div class="container-fluid containerHome d-flex flex-column m-md-0 m-lg-4 m-0">
+  <div class="d-flex flex-column  justify-content-center my-2">
+    <div class="col-md-6 mb-3 align-self-center">
+      <form class="d-flex " role="search">
+        <input class="form-control me-3 searchBar" type="search" placeholder="Buscar ubicación" aria-label="Search">
+        <button class="btn btnSearch me-3" type="submit">Buscar</button>
+      </form>
+    </div>
+    <div class="col-md-12 my-md-2 d-flex justify-content-center">
+      <div class="dropdown d-md-none">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle btnCategory" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorías
+          </button>
+          <ul class="dropdown-menu ">
+            <li><a class="dropdown-item" href="#">Ilustración</a></li>
+            <li><a class="dropdown-item" href="#">Diseño de personajes</a></li>
+            <li><a class="dropdown-item" href="#">Arte digital</a></li>
+            <li><a class="dropdown-item" href="#">Diseño gráfico</a></li>
+            <li><a class="dropdown-item" href="#">Arte 3D</a></li>
+            <li><a class="dropdown-item" href="#">UI/UX</a></li>
+            <li><a class="dropdown-item" href="#">Tatuaje</a></li>
+            <li><a class="dropdown-item" href="#">Diseño de producto</a></li>
+            <li><a class="dropdown-item" href="#">Cómic</a></li>
+            <li><a class="dropdown-item" href="#">Fanzine</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-none d-md-block text-center">
+          <button class="btn btnCategory mx-3 my-md-2"  (click)="setActiveButton(0)" [class.clicked]="activeButtonIndex === 0">Ilustración</button>
+          <button class="btn btnCategory mx-3 my-md-2" (click)="setActiveButton(1)" [class.clicked]="activeButtonIndex === 1">Diseño de personajes</button>
+          <button class="btn btnCategory mx-3 my-md-2" (click)="setActiveButton(2)" [class.clicked]="activeButtonIndex === 2">Arte digital</button>
+          <button class="btn btnCategory mx-3 my-md-2" (click)="setActiveButton(3)" [class.clicked]="activeButtonIndex === 3">Diseño gráfico</button>
+          <button class="btn btnCategory mx-3 my-md-2" (click)="setActiveButton(4)" [class.clicked]="activeButtonIndex === 4">Arte 3D</button>
+          <button class="btn btnCategory mx-3 my-md-2" (click)="setActiveButton(5)" [class.clicked]="activeButtonIndex === 5">UI/UX</button>
+          <button class="btn btnCategory mx-3 my-md-2" (click)="setActiveButton(6)" [class.clicked]="activeButtonIndex === 6">Tatuaje</button>
+          <button class="btn btnCategory mx-3 my-md-2" (click)="setActiveButton(7)" [class.clicked]="activeButtonIndex === 7">Diseño de producto</button>
+          <button class="btn btnCategory mx-3 my-md-2" (click)="setActiveButton(8)" [class.clicked]="activeButtonIndex === 8">Cómic</button>
+          <button class="btn btnCategory mx-3 my-md-2" (click)="setActiveButton(9)" [class.clicked]="activeButtonIndex === 9">Fanzine</button>
+      </div>
+    </div>
+    
+  <div class="d-flex flex-lg-row flex-column">
+    <div class="row col-lg-8 col-12 g-lg-4 ms-0 my-4 containerArtists order-md-2 order-lg-1">
+        <div class="col-xxl-3 col-md-6 col-12 mb-3">
+          <div class="card">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
+            <div class="card-body">
+              <div>
+                <h6 class="card-text boldFont">Nombre</h6>
+              </div>
+              <small class="card-text">Categoría</small>
+            </div>
+          </div>
+        </div>
+          <div class="col-xxl-3 col-md-6 col-12 mb-3">
+          <div class="card">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
+            <div class="card-body">
+              <div>
+                <h6 class="card-text boldFont ">Nombre</h6>
+              </div>
+              <small class="card-text">Categoría</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-xxl-3 col-md-6 col-12 mb-3">
+          <div class="card">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
+            <div class="card-body">
+              <div>
+                <h6 class="card-text boldFont">Nombre</h6>
+              </div>
+              <small class="card-text">Categoría</small>
+            </div>
+          </div>
+        </div>  
+        <div class="col-xxl-3 col-md-6 col-12 mb-3">
+          <div class="card">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
+            <div class="card-body">
+              <div>
+                <h6 class="card-text boldFont">Nombre</h6>
+              </div>
+              <small class="card-text">Categoría</small>
+            </div>
+          </div>
+        </div>     
+      </div>
+      <div id="map" class="col-lg-4 col-12 my-lg-4 d-flex justify-content-center align-items-center containerMap d-none d-md-block order-md-1 order-lg-2">
+      </div>
+   </div>
+</div>
+<ng-template #userModal let-modal>
+	<div class="modal-header d-flex">
+    <div class="align-self-start align-items-right order-3">
+      <button type="button" class="btn-close " aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>   
+      <div class="align-self-start order-1 d-flex">
+        <svg class="bd-placeholder-img rounded-circle my-4" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect></svg>
+        <div class="d-flex flex-column align-items-start justify-content-center ms-4 order-2">
+          <h4 class="boldFont">Nombre usuario</h4>
+          <h6>Categoría</h6>
+        </div>
+      </div>
+	</div>
+	<div class="modal-body">
+    <div class="row g-3">
+      <div class="col-md-6 col-12">
+        <div class="card">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
+          <div class="card-body">
+            <a href="" class="stretched-link text-decoration-none">
+              <h6 class="card-text boldFont">Nombre proyecto</h6>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="card">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
+          <div class="card-body">
+            <a href="#" class="stretched-link text-decoration-none">
+              <h6 class="card-text boldFont">Nombre proyecto</h6>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="card">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
+          <div class="card-body">
+            <a href="" class="stretched-link text-decoration-none">
+              <h6 class="card-text boldFont">Nombre proyecto</h6>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="card">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
+          <div class="card-body">
+            <a href="#" class="stretched-link text-decoration-none">
+              <h6 class="card-text boldFont">Nombre proyecto</h6>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btnCategory" (click)="modal.close('Save click')">Save</button>
+	</div>
+</ng-template>
+
+<button class="btn btn-outline-primary" (click)="open(userModal)">Launch demo modal</button>
+
