@@ -11,6 +11,7 @@ import { Map, tileLayer } from 'leaflet';
 
 export class HomeComponent implements AfterViewInit{
   closeResult = '';
+  activeButtonIndex: number | null = null;
   constructor(private modalService: NgbModal){}
 
   open(content:any) {
@@ -42,5 +43,8 @@ export class HomeComponent implements AfterViewInit{
 	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
   }
-
+	
+  setActiveButton(index: number): void {
+    this.activeButtonIndex = index;
+  }
 }

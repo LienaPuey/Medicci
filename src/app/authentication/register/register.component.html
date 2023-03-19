@@ -11,22 +11,38 @@
 
 			<span class="subtitle text-muted">¿Ya tienes una cuenta? <a routerLink="/login">Iniciar sesión</a></span>
 		</div>
-				<form>
+				<form [formGroup]="registerForm" (ngSubmit)="onRegister()">
 					<div class="form-group mb-3">
 						<label for="username">Nombre de usuario:</label>
-						<input type="text" class="form-control" id="username">
+						<input type="text" class="form-control" id="username" formControlName="username">
 					</div>
 					<div class="form-group mb-3">
-						<label for="adress">Dirección:</label>
-						<input type="text" class="form-control" id="password">
+						<label for="location">Dirección:</label>
+						<input type="text" class="form-control" id="location" formControlName="location">
 					</div>
+					<div class="form-group mb-3">
+						<label for="category">Categoría:</label>
+						<select class="form-select mb-3" aria-label="Default select example" formControlName="category">
+							<option value="1">Ilustración</option>
+							<option value="2">Diseño de personajes</option>
+							<option value="4">Arte digital</option>
+							<option value="5">Diseño gráfico</option>
+							<option value="6">Arte 3D</option>
+							<option value="7">UI/UX</option>
+							<option value="8">Tatuaje</option>
+							<option value="9">Diseño de producto</option>
+							<option value="10">Cómic</option>
+							<option value="11">Fanzine</option>
+						</select>
+					</div>
+
 					<div class="form-group mb-3">
 						<label for="email">Email:</label>
-						<input type="email" class="form-control" id="email">
+						<input type="email" class="form-control" id="email" formControlName="email">
 					</div>
 					<div class="form-group mb-3">
 						<label for="password">Contraseña:</label>
-						<input type="password" class="form-control" id="password">
+						<input type="password" class="form-control" id="password" formControlName="password">
 					</div>
 
 					<div class="d-grid col-3 mx-auto">

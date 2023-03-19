@@ -14,6 +14,19 @@
         border: solid black 1px;
     }
 }
+.btnCancel{
+    background-color: #9ed7ce;
+    -webkit-box-shadow: -5px 4px 0px 2px  #76B2A6;
+    -moz-box-shadow: -5px 4px 0px 2px  #76B2A6;
+    box-shadow: -5px 4px 0px 2px  #76B2A6;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    &:hover{
+        background-color:#ffe881;
+        color: black;
+        border: solid black 1px;
+    }
+}
 .boldFont{
   font-weight: 700;
 }
@@ -31,8 +44,14 @@ button{
 .card-img, .card-img-top{
     border-radius: 0;
 }
-a{
-    color: black !important;
+.cardProject{
+    cursor: pointer;
+}
+.modal-header{
+    border-bottom: #ffe881 5px solid !important;
+}
+.modal-footer{
+    border-top:  #ffe881 5px solid !important;
 }
 
 // Small devices (landscape phones, 576px and up)

@@ -17,7 +17,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { AddProjectComponent } from './components/add-project/add-project.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,9 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     NgbModule,
-    NgbModalModule
+    NgbModalModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]

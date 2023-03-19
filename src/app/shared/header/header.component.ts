@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  @Input() isLoginPage: boolean | undefined;
+  constructor(public usersService: UsersService){}
+  onLogout():void{
+    this.usersService.logout();
+  }
 }

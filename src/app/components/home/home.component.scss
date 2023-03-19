@@ -13,7 +13,9 @@
     margin: 0;
     height: 80vh;
 }
-
+.card{
+    cursor: pointer;
+}
 #map{
     // height: 100vh;
 }
@@ -27,7 +29,7 @@ button{
     box-shadow: -5px 4px 0px 2px  #7070C4;
     color: rgb(255, 255, 255);
     border-radius: 20px;
-    &:hover{
+    &:hover, &.clicked{
         background-color:#ffe881;
         color: black;
         border: solid black 1px;
@@ -73,6 +75,13 @@ a{
 .boldFont{
     font-weight: 700;
   }
+
+.modal-header{
+    border-bottom: #ffe881 5px solid !important;
+}
+.modal-footer{
+    border-top:  #ffe881 5px solid !important;
+}
 
 // Small devices (landscape phones, 576px and up)
 @media screen and (max-width: 576px) {  

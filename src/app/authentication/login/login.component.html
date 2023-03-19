@@ -9,14 +9,14 @@
 			<h2>Inicio de sesión</h2>
 			<span class="subtitle text-muted">¿Eres nuevo usuario? <a routerLink="/register">Crear una cuenta</a></span>
 		</div>
-				<form>
+				<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
 					<div class="form-group mb-3">
 						<label for="email">Email:</label>
-						<input type="email" class="form-control" id="email">
+						<input formControlName="email" type="email" class="form-control" id="email">
 					</div>
 					<div class="form-group mb-3">
 						<label for="password">Contraseña:</label>
-						<input type="password" class="form-control" id="password">
+						<input formControlName="password" type="password" class="form-control" id="password">
 					</div>
 					<div class="d-grid col-3 mx-auto">
 						<button type="submit" class="btn btn-continuar">Continuar</button>

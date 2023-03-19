@@ -6,15 +6,16 @@ import { LoginComponent } from './authentication/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { AddProjectComponent } from './components/add-project/add-project.component';
+import { CheckLoginGuard } from './guards/check-login.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent},
   { path: 'register', component: RegisterComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'settings', component: EditProfileComponent },
-  { path: 'add', component: AddProjectComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'settings', component: EditProfileComponent, canActivate: [CheckLoginGuard] },
+  { path: 'add', component: AddProjectComponent, canActivate: [CheckLoginGuard] }
 ];
 
 @NgModule({
