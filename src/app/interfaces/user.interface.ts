@@ -4,6 +4,7 @@ export interface User{
 }
 
 export interface RegisterUser {
+  uid: string,
   username: string,
   location: string,
   category: string,

@@ -1,9 +1,10 @@
 export const environment = {
   firebase: {
-    projectId: 'medicci-1d8d5',
-    appId: '1:624189766146:web:798b63940dbaea9766051b',
-    storageBucket: 'medicci-1d8d5.appspot.com',
-    apiKey: 'AIzaSyDT0NJx6PwXbBoiDzkFdS-UL1qWTtukn5o',
-    authDomain: 'medicci-1d8d5.firebaseapp.com',
-    messagingSenderId: '624189766146',
+    projectId: 'medicci-5232b',
+    appId: '1:477916296063:web:f9f688a2d1650556f5e04a',
+    storageBucket: 'medicci-5232b.appspot.com',
+    locationId: 'europe-west',
+    apiKey: 'AIzaSyBTshtMJlpeAQsVnA8GPmEw_LuxrSfOAJM',
+    authDomain: 'medicci-5232b.firebaseapp.com',
+    messagingSenderId: '477916296063',
   },};

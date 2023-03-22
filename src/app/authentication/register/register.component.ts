@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RegisterUser } from 'src/app/interfaces/user.interface';
+import { RegisterUser, User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -21,17 +21,28 @@ export class RegisterComponent {
 
   onRegister(): void {
     const formValue = this.registerForm.value;
-    const user: RegisterUser = {
+    const user = {
       username: formValue.username as string,
       email: formValue.email as string,
       password: formValue.password as string,
       location: formValue.location as string,
       category: formValue.category as string
     };
-    this.usersService.register(user).subscribe(res => {
-      if (res) {
-        this.router.navigate(['/login']);
+    this.usersService.register(user).then((res:any) => {
+      const userData: RegisterUser = {
+        uid: res.user.uid,
+        email: user.email,
+        username: user.username,
+        location: user.location,
+        category: user.category,
+        password: user.password
       }
-    });
+      this.usersService.setUserData(userData);
+      this.router.navigate(['/login']);
+      console.log('usuario registrado');
+    })
+    .catch((error) =>{
+      window.alert(error.message);
+    })
   }
 }

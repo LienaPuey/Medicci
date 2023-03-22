@@ -1,4 +1,6 @@
+import { UsersService } from 'src/app/services/users.service';
 import { Component} from '@angular/core';
+import { User } from './interfaces/user.interface';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,9 @@ import { Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'medicci';
-isLoginPage: boolean|undefined;
+  user?: User |null;
+  constructor(private usersService: UsersService ){
+    this.usersService.isLogged.subscribe()
+  }
 
 }

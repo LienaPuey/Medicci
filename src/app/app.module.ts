@@ -19,6 +19,11 @@ import { AddProjectComponent } from './components/add-project/add-project.compon
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +44,11 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     NgbModalModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    provideStorage(() => getStorage()),
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    provideFirestore(() => getFirestore())
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]

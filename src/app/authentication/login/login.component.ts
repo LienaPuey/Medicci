@@ -10,34 +10,41 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class LoginComponent implements OnInit{
   ngOnInit(): void {
-    // const userData = {
-    //   email: 'lienapuey@gmail.com',
-    //   password: 'liena123'
-    // }
-    // this.usersService.login(userData).subscribe(res => console.log('Login'));
   }
   loginForm = this.fb.group({
     email: [''],
     password: ['']
   })
-  constructor(private usersService : UsersService, private fb: FormBuilder, private router: Router, private cdr: ChangeDetectorRef){
-
-  }
-  onLogin(): void {
-    const formValue = this.loginForm.value;
-    const email = formValue.email as string;
-    const password = formValue.password as string;
-    const userData: User = { email, password };
+  constructor(private usersService : UsersService, private fb: FormBuilder, private router: Router){  }
   
-    this.usersService.login(userData).subscribe({
-      next: () => {
-        console.log('logeado');
+  onLogin():void {
+    const formValue = this.loginForm.value;
+    const userData: User = {
+      email: formValue.email || '',
+      password: formValue.password || ''
+    };
+    this.usersService.login(userData)
+      .then( response => {
+        console.log(response)
         this.router.navigate(['/home']);
-        this.cdr.detectChanges();
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
+      })
+      .catch(error => console.log(error))
   }
+  // onLogin(): void {
+  //   const formValue = this.loginForm.value;
+  //   const email = formValue.email as string;
+  //   const password = formValue.password as string;
+  //   const userData: User = { email, password };
+  
+  //   this.usersService.login(userData).subscribe({
+  //     next: () => {
+  //       console.log('logeado');
+  //       this.router.navigate(['/home']);
+  //       this.cdr.detectChanges();
+  //     },
+  //     error: (err) => {
+  //       console.log(err);
+  //     }
+  //   });
+  // }
 }
