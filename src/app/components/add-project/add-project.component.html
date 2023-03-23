@@ -2,7 +2,7 @@
     <div class="mb-5 my-4">
         <h3 class="boldFont">Añadir proyecto</h3>
     </div>
-    <form [formGroup]="projectForm" >
+    <form [formGroup]="projectForm"  >
         <div>
             <div class="mb-3">
                 <input class="form-control" type="file" id="formFileMultiple" multiple>
@@ -13,17 +13,17 @@
             <img src="../../../assets/placeholders/ejemplo2.jpg" class="img-thumbnail mx-2" alt="..." style="width: 200px; height: 200px;">
             <img src="../../../assets/placeholders/ejemplo3.jpg" class="img-thumbnail mx-2" alt="..." style="width: 200px; height: 200px;">
         </div>
-        <div class="mb-3 w-50">
+        <div class="mb-3 w-100">
             <label for="exampleFormControlInput1" class="form-label" >Nombre del proyecto</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="name">
         </div>
-        <div class="mb-3 w-50">
+        <div class="mb-3 w-100">
             <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" formControlName="description"></textarea>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
-            <button class="btn btnCancel me-md-2" type="button">Cancelar</button>
-            <button class="btn btnSave" type="button">Guardar</button>
+            <button class="btn btnCancel me-md-2" type="button" (click)="cancel()">Cancelar</button>
+            <button class="btn btnSave" type="button" (click)="createProject()">Guardar</button>
         </div>
     </form>
 
