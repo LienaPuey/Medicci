@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { RegisterUser, User } from '../interfaces/user.interface';
 import { BehaviorSubject, Observable, catchError, map, pipe, throwError } from 'rxjs';
 import { Router } from '@angular/router';
@@ -12,8 +11,11 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
   providedIn: 'root'
 })
 export class UsersService {
-  private loggedIn = new BehaviorSubject<boolean>(false)
-  constructor(private http: HttpClient, private router: Router, private afAuth: AngularFireAuth, private afs: AngularFirestore) { 
+  private loggedIn = new BehaviorSubject<boolean>(false);
+  private loginInitialized = new BehaviorSubject<boolean>(false);
+  userData:any;
+  constructor(private router: Router, private afAuth: AngularFireAuth, private afs: AngularFirestore) { 
+
     this.afAuth.authState.subscribe((user) => {
       if (user) {
         this.userData = user;
@@ -25,19 +27,25 @@ export class UsersService {
         if (userToken) {
           this.loggedIn.next(true);
         }
+        this.loginInitialized.next(true);
       } else {
         localStorage.setItem('user', 'null');
         JSON.parse(localStorage.getItem('user')!);
+        this.loginInitialized.next(true);
       }
     });
   }
-  userData:any;
-  get isLogged():Observable<boolean>{
+
+  get isLogged(): Observable<boolean> {
     return this.loggedIn.asObservable();
   }
 
-  public get loginValue(){
+  public get loginValue() {
     return this.loggedIn.value;
+  }
+
+  public get isLoginInitialized(): Observable<boolean> {
+    return this.loginInitialized.asObservable();
   }
 
  login(authData: User){
@@ -93,4 +101,15 @@ export class UsersService {
     this.router.navigate(['/home']);
   }
 
+  getUser(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.afAuth.authState.subscribe((user) => {
+        if (user) {
+          resolve(user);
+        } else {
+          reject('Usuario no encontrado');
+        }
+      });
+    });
+  }
 }

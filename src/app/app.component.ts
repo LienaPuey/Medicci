@@ -7,11 +7,14 @@ import { User } from './interfaces/user.interface';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent{
   title = 'medicci';
-  user?: User |null;
+  isLogged = false;
+  isLoginInitialized = false;
+
   constructor(private usersService: UsersService ){
-    this.usersService.isLogged.subscribe()
+    this.usersService.isLogged.subscribe(isLogged => this.isLogged = isLogged);
+    this.usersService.isLoginInitialized.subscribe(isInitialized => this.isLoginInitialized = isInitialized);
   }
 
 }
