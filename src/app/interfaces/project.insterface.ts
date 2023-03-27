@@ -1,5 +1,7 @@
 export interface Project {
-    name: string,
-    description: string,
-    projectImages?: string[];
-}
+    projectId?: string;
+    userId?: string;
+    name: string;
+    description: string;
+    images: string[];
+  }
