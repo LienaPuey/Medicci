@@ -21,12 +21,12 @@
           </div>
     </div>
     <div class="row col-md-9 g-3 my-5" >
-      <div class="col-lg-4 col-md-6" >
+      <div class="col-lg-4 col-md-6" *ngFor="let project of projects">
         <div class="card cardProject" (click)="open(projectModal)">
           <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
           <div class="card-body">
             <div>
-              <h6 class="card-text boldFont">Nombre proyecto</h6>
+              <h6 class="card-text boldFont">{{project.name}}</h6>
             </div>
           </div>
         </div>

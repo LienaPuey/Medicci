@@ -1,4 +1,4 @@
-import { collection, collectionData } from '@angular/fire/firestore';
+import { collection, collectionData, query, where } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
 import { UsersService } from './users.service';
@@ -33,9 +33,12 @@ export class ProjectService {
     return task.then((snapshot) => snapshot.ref.getDownloadURL());
   }
 
-  getProjects(): Observable<Project[]>{
-    const projectRef = collection(this.afs.firestore, 'projects')
-    return collectionData(projectRef, {idField: 'id'}) as Observable<Project[]>;
+  getProjectsForLoggedUser(userId: string): Observable<Project[]>{
+    const ordersRef = collection(this.afs.firestore, 'projects');
+    const filterByUserId = where('userId', '==', userId);
+    const ordersByTodayQuery = query(ordersRef, filterByUserId);
+    return collectionData(ordersByTodayQuery) as Observable<Project[]>;
+
   }
 
 }

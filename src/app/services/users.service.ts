@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, UserInfo } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +35,9 @@ export class UsersService {
       }
     });
   }
-
+  getUserFromStore(): UserInfo {
+    return JSON.parse(localStorage.getItem('user') || '')
+  }
   get isLogged(): Observable<boolean> {
     return this.loggedIn.asObservable();
   }
