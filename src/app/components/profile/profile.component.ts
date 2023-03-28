@@ -16,7 +16,11 @@ export class ProfileComponent implements OnInit{
   projects: Project[] =[];
   constructor(private modalService: NgbModal, private userService: UsersService,private projectService: ProjectService, private storage: AngularFireStorage){}
   ngOnInit(): void {
+	this.projectService.getProjects().subscribe(projects => {
+		console.log(projects);
+		this.projects = projects;
 
+	})
 	}
 
   open(content:any) {

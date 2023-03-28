@@ -33,6 +33,9 @@ export class ProjectService {
     return task.then((snapshot) => snapshot.ref.getDownloadURL());
   }
 
-
+  getProjects(): Observable<Project[]>{
+    const projectRef = collection(this.afs.firestore, 'projects')
+    return collectionData(projectRef, {idField: 'id'}) as Observable<Project[]>;
+  }
 
 }
