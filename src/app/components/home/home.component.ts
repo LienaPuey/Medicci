@@ -1,7 +1,9 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { ProjectService } from 'src/app/services/project.service';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Map, tileLayer } from 'leaflet';
+import { Project } from 'src/app/interfaces/project.insterface';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +11,15 @@ import { Map, tileLayer } from 'leaflet';
   styleUrls: ['./home.component.scss'],
 })
 
-export class HomeComponent implements AfterViewInit{
+export class HomeComponent implements AfterViewInit, OnInit {
   closeResult = '';
   activeButtonIndex: number | null = null;
-  constructor(private modalService: NgbModal){}
+
+  constructor(private modalService: NgbModal, private projectService: ProjectService){}
+
+  ngOnInit(): void {
+
+  }
 
   open(content:any) {
 		this.modalService.open(content, { ariaLabelledBy: 'modal-xl-title', size: 'lg' }).result.then(

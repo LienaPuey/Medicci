@@ -1,8 +1,11 @@
+import { collection, collectionData } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
 import { UsersService } from './users.service';
 import { Project } from '../interfaces/project.insterface';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { Observable, switchMap } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +32,7 @@ export class ProjectService {
     const task = ref.put(file);
     return task.then((snapshot) => snapshot.ref.getDownloadURL());
   }
+
+
 
 }

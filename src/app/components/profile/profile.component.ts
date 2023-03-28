@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
+import { UsersService } from './../../services/users.service';
+import { Component, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { from, Observable, of } from 'rxjs';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { ProjectService } from 'src/app/services/project.service';
+import { Project } from 'src/app/interfaces/project.insterface';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit{
+	
   closeResult = '';
-  constructor(private modalService: NgbModal){}
+  projects: Project[] =[];
+  constructor(private modalService: NgbModal, private userService: UsersService,private projectService: ProjectService, private storage: AngularFireStorage){}
+  ngOnInit(): void {
+
+	}
 
   open(content:any) {
 		this.modalService.open(content, { ariaLabelledBy: 'projectModalLabel', size: 'lg' }).result.then(
