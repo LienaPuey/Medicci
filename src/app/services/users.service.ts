@@ -6,6 +6,8 @@ import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
 import { signInWithEmailAndPassword, UserInfo } from 'firebase/auth';
+import { collection, query, where } from 'firebase/firestore';
+import { collectionData } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -113,5 +115,12 @@ export class UsersService {
         }
       });
     });
+  }
+
+  getUserInfoForLoggedUser(userId: string): Observable<RegisterUser[]>{
+    const ordersRef = collection(this.afs.firestore, 'users');
+    const filterByUserId = where('userId', '==', userId);
+    const ordersByTodayQuery = query(ordersRef, filterByUserId);
+    return collectionData(ordersByTodayQuery) as Observable<RegisterUser[]>;
   }
 }

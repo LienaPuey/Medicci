@@ -5,6 +5,8 @@ import { from, Observable, of } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { ProjectService } from 'src/app/services/project.service';
 import { Project } from 'src/app/interfaces/project.insterface';
+import { RegisterUser, User } from 'src/app/interfaces/user.interface';
+import { UserInfo } from 'firebase/auth';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -14,6 +16,7 @@ export class ProfileComponent implements OnInit{
 	
   closeResult = '';
   projects: Project[] =[];
+  user:RegisterUser[]= [];
   selectedProject: Project |undefined;
 
   constructor(private modalService: NgbModal, private userService: UsersService,private projectService: ProjectService, private storage: AngularFireStorage){}
@@ -21,7 +24,12 @@ export class ProfileComponent implements OnInit{
 	this.projectService.getProjectsForLoggedUser(this.userService.getUserFromStore().uid).subscribe(projects => {
 		console.log(projects);
 		this.projects = projects;
-	  })
+	  });
+
+	this.userService.getUserInfoForLoggedUser(this.userService.getUserFromStore().uid).subscribe(user => {
+		console.log(user);
+		this.user = user;
+	})
 	}
 
   openProject(content:any, project: Project) {
