@@ -14,6 +14,8 @@ export class ProfileComponent implements OnInit{
 	
   closeResult = '';
   projects: Project[] =[];
+  selectedProject: Project |undefined;
+
   constructor(private modalService: NgbModal, private userService: UsersService,private projectService: ProjectService, private storage: AngularFireStorage){}
   ngOnInit(): void {
 	this.projectService.getProjectsForLoggedUser(this.userService.getUserFromStore().uid).subscribe(projects => {
@@ -22,7 +24,8 @@ export class ProfileComponent implements OnInit{
 	  })
 	}
 
-  open(content:any) {
+  openProject(content:any, project: Project) {
+	this.selectedProject = project;
 		this.modalService.open(content, { ariaLabelledBy: 'projectModalLabel', size: 'lg' }).result.then(
 			(result) => {
 				this.closeResult = `Closed with: ${result}`;
@@ -32,6 +35,16 @@ export class ProfileComponent implements OnInit{
 			},
 		);
 	}
+	open(content:any) {
+			this.modalService.open(content, { ariaLabelledBy: 'projectModalLabel', size: 'lg' }).result.then(
+				(result) => {
+					this.closeResult = `Closed with: ${result}`;
+				},
+				(reason) => {
+					this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+				},
+			);
+		}
 
 	private getDismissReason(reason: any): string {
 		if (reason === ModalDismissReasons.ESC) {

@@ -53,7 +53,11 @@ button{
 .modal-footer{
     border-top:  #ffe881 5px solid !important;
 }
-
+.imgProject{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 // Small devices (landscape phones, 576px and up)
 @media screen and (max-width: 576px) {  
 

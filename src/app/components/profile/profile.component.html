@@ -22,42 +22,14 @@
     </div>
     <div class="row col-md-9 g-3 my-5" >
       <div class="col-lg-4 col-md-6" *ngFor="let project of projects">
-        <div class="card cardProject" (click)="open(projectModal)">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
+        <div class="card cardProject" (click)="openProject(projectModal, project)">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
+            <image *ngIf="project.images && project.images.length > 0" [attr.href]="project.images[0]" class="imgProject"/>
+            <rect *ngIf="!project.images || project.images.length == 0" width="100%" height="100%" fill="#55595c"/>
+          </svg>
           <div class="card-body">
             <div>
               <h6 class="card-text boldFont">{{project.name}}</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6">
-        <div class="card cardProject">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
-          <div class="card-body">
-            <div >
-              <h6 class="card-text boldFont">Nombre proyecto</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="card cardProject">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
-          <div class="card-body">
-            <div >
-              <h6 class="card-text boldFont">Nombre proyecto</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="card cardProject">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"  focusable="false"><rect width="100%" height="100%" fill="#55595c"/></svg>
-          <div class="card-body">
-            <div>
-              <h6 class="card-text boldFont">Nombre proyecto</h6>
             </div>
           </div>
         </div>
@@ -66,17 +38,15 @@
 </div>
 <ng-template #projectModal let-modal>
   <div class="modal-header ">
-    <h4 class="modal-title boldFont" id="modal-basic-title">Nombre proyecto</h4>
+    <h4 class="modal-title boldFont" id="modal-basic-title">{{selectedProject?.name}}</h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
   </div>
   <div class="modal-body">
     <div class="p-3">
-      <img src="../../../assets/placeholders/ejemplo1.jpg" class="img-fluid mb-2" alt="...">
-      <img src="../../../assets/placeholders/ejemplo2.jpg" class="img-fluid mb-2" alt="...">
-      <img src="../../../assets/placeholders/ejemplo3.jpg" class="img-fluid mb-2" alt="...">
+      <img *ngFor="let image of selectedProject?.images" [src]="image" class="img-fluid mb-2" alt="...">
     </div>
     <div class="p-3">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero excepturi placeat, culpa beatae officiis accusantium consequatur soluta nulla ipsam eos dolores, error facilis consequuntur ad dolorem. Obcaecati, tempora? Voluptatibus officiis aspernatur recusandae harum consequatur molestias consequuntur sapiente et quisquam impedit!</p>
+      <p>{{selectedProject?.description}}</p>
     </div>
   </div>
   <div class="modal-footer">
