@@ -44,7 +44,7 @@ export class AddProjectComponent {
     console.log("proyecto añadido");
     // Limpiar el formulario
     this.projectForm.reset();
-    
+    this.router.navigate(['/profile']);
   }
   
 cancel() {
